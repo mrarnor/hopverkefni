@@ -1,9 +1,12 @@
 #hopverkefni
 #22.11.2017
 #Oliver og Arnór
-import random
+
+import random #nær í random
+
+#valmynd
 svar = "ja"
-while svar == "ja":
+while svar == "ja": #meðan svar er ja
     print("1.Fótboltalið")
     print("2.Þversumma")
     print("3.skæri, blað steinn")
@@ -16,18 +19,31 @@ while svar == "ja":
     print("10.hætta")
     val = int(input("veldu númer "))
 
-    if val == 1:
+
+
+    if val == 1: #ef val er sama og 1 kemur þessi texti
         print("fótboltalið")
         fjoldiSpilanda = int(input("sláðu inn fjölda spilenda "))
         fjoldiLid = int(input("hvað eru margir í liði "))
-        heild = int(fjoldiSpilanda/fjoldiLid)
-        print ("liðafjöldi", heild)
-        afgang = fjoldiSpilanda % fjoldiLid
-        print ("varamenn",afgang)
+
+
+
+        if fjoldiSpilanda > fjoldiLid: #ef fjöldi spilarar er stærri en lið
+            heild = int(fjoldiSpilanda / fjoldiLid) #spilarar deilt með lið
+            print("liðafjöldi", heild)
+            afgang = fjoldiSpilanda % fjoldiLid #afgangur á spilurum
+            print("varamenn", afgang)
+
+        else:
+            print("Ekki næst í lið með þennan fjölda þátttakenda")
+
+
 
     elif val == 2:
         print("þversumma")
-        afram = True
+        afram = True #afram er True
+
+
 
         while afram:
             tala = int(input("Sláðu inn tölu: "))
@@ -55,8 +71,10 @@ while svar == "ja":
                     print(" =", teljari)
             print()
 
+
+
     elif val == 3:
-        print("slæri blað steinn")
+        print("skæri blað steinn")
         nafn = input("Hvað heitir þú?: ")
         aldur = int(input("Hvað ertu gamall/gömul?: "))
         print()
@@ -84,6 +102,8 @@ while svar == "ja":
                 else:
                     print("Þú tapaðir! Þú reyndir", hlutir[val], "og tölvan gerði", hlutir[tolvan])
 
+
+
     elif val == 4:
 
         texti = input("Skrifaðu texta: ")
@@ -97,7 +117,7 @@ while svar == "ja":
         print(utkoma.replace(" ", "_"))
 
     elif val == 5:
-        print("heiltöur")
+        print("heiltölur")
         listi = []
         for x in range(12):
             tala = input("veldu tölu")
@@ -168,8 +188,6 @@ while svar == "ja":
 
 
 
-
-
     elif val == 8:
         print("Teningar")
         kast = []
@@ -204,8 +222,17 @@ while svar == "ja":
         print("Summan 15 kom", kast.count(15), "sinnum")
         print("Summan 18 kom", kast.count(18), "sinnum")
 
+
+
     elif val == 9:
         print("byggingaupplýsingar")
+        byggingar = ["Hallgrimskirkja", "Perlan         ", "Kjarvalsstaðir "]
+        arkitektar = ["Guðjón Samúelsson   ", "Ingimundur Sveinsson", "Hannes Kr. Davíðsson"]
+        opnad = ["1986", "1991", "1973"]
+
+        print("Bygging             Arkitekt                 Opnað")
+        for x in range(len(byggingar)):
+            print(byggingar[x], "   ", arkitektar[x], "   ", opnad[x])
 
 
     else:
